@@ -1,5 +1,7 @@
 //filter
 
+/*
+
 const people = [
     {name: "Lucas", idade: 35},
     {name: "Maria", idade: 17},
@@ -7,7 +9,7 @@ const people = [
     {name: "Ana", idade: 22},
 ]
 
-/*
+
 //crie um array com vários números
 //use filtro para mostrar  apenas os números maiores que 50
 
@@ -177,7 +179,7 @@ const total = carrinho.reduce((acc, item) => {
 }, 0);
 console.log(total);
 
-*/
+
 
 //contar quantidade de letras
 const palavras = ["oi", "javascript", "html"];
@@ -186,3 +188,180 @@ const contador = palavras.reduce((acc, palavra) => {
     return acc + palavra.length;
 }, 0);
 console.log(contador);
+
+
+
+//reduce
+//use reduce para descobrir: qual maior número do array
+const numeros = [10, 45, 7, 99, 32];
+
+const maior = numeros.reduce((acc, numero) => {
+   if (numero > acc) {
+    return numero
+   }
+   return acc;
+}, 0);
+console.log(maior);
+
+
+
+const produtos = [
+    {produto: "mouse", preco: 50},
+    {produto: "teclado", preco: 200},
+    {produto: "monitor", preco: 900},
+    {produto: "notebook", preco: 3000}
+];
+
+const resultado = produtos.filter((produto) => {
+    return produto.preco > 100;
+})
+.map((produto) => {
+    return produto.produto;
+});
+console.log(resultado);
+
+
+
+const filmes = [
+    {nome:"vingadores", nota:9 },
+    {nome:"batman", nota:7 },
+    {nome:"dragon ball", nota:10 },
+    {nome:"matrix", nota:8 },
+]
+
+const filmesBons = filmes.filter((filme) => {
+    return filme.nota >= 8;
+})
+console.log(filmesBons)
+
+const nomes = filmes.map((filme) => {
+    return  filme.nome;
+})
+
+console.log(nomes);
+
+const batman = filmes.find((filme) => {
+    return filme.nome === "batman"; 
+});
+
+const soma = filmes.reduce((acc, filme) => {
+   return  acc + filme.nota
+
+});
+console.log(soma);
+
+
+
+//switch
+switch (valor) {
+    case value:
+
+    break;
+
+    default:
+        break;
+}
+
+
+
+const dia = 3;
+
+switch (dia) {
+    case 1:
+        console.log("domingo");
+        break;
+    case 2:
+        console.log("segunda");
+        break;
+    case 3:
+        console.log("terça");
+        break;
+    default:
+        console.log("Dia iválido")
+        break;
+}
+
+
+
+const n1 = 10;
+const n2 = 5;
+
+const operacao = "+";
+
+switch (operacao) {
+    case "+":
+        console.log(n1 + n2);
+        break;
+    case "-":
+        console.log(n1 - n2);
+        break;
+        case "*":
+            console.log(n1 * n2);
+            break;
+            case "/":
+                console.log(n1 / n2);
+                break;
+    default:
+        console.log("Operação inválida")
+        break;
+}
+
+
+
+//faça um sistemas de notas
+
+const nota = prompt("digite uma nota: a, b, c ou d");
+
+switch (nota) {
+    case "a":
+        console.log("exelente")
+        break;
+    case "b":
+        console.log("bom")
+        break;
+    case "c":
+        console.log("regular")
+        break;
+    case "d":
+        console.log("ruim")
+        break;
+    default:
+    console.log("invalida")
+        break;
+}
+
+*/
+
+//crie um sistema de menu de videogame:
+
+let opcao;
+do {
+    opcao = Number(prompt`
+        === Menu ===
+        1 - Jogar 
+        2 - configurações
+        3 - créditos
+        4 -sair
+        `);
+    switch (opcao) {
+    case 1:
+        console.log("iniciando...")
+        break;
+    case 2:
+        console.log("abrindo configurações...")
+        break;
+    case 3:
+        console.log("criado por...")
+        break;
+    case 4:
+        console.log("saindo...")
+        break;
+    
+
+    default:
+        console.log("opção inválida")
+        break;
+}
+
+
+} while (opcao !== 4);
